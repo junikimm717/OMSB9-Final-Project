@@ -49,7 +49,7 @@ function display() {
 
         <div class="row">
             <div class="col-md-12">
-                <form method="get" action="handler.php">
+                <form method="post" action="handler.php">
                     <label for="answer" name="answer"> Enter Answer (Required) </label> <br>
                     <input type="number" name="answer" id="answer"/> <br><br>
 
