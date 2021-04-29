@@ -7,12 +7,12 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-12"> <h1> Please enter necessary data below. </h1> </div>
+            <div class="col-md-12"> <h1> Please enter the necessary data below. </h1> </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <form method="get" action="testing.php">
-                    <label for="id"> ID </label> <br>
+                    <label for="id"> Participant ID </label> <br>
                     <input type="text" id="id" name="id"></input> <br> <br>
 
                     <label for="time"> Reaction time </label> <br>

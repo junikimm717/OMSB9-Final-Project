@@ -1,6 +1,6 @@
-# Juni's MSB Final Project (Redone)
+# Juni's MSB Final Project (Re-done with a new topic)
 
-This project will concern experimental results from subitizing from peripheral
+This project will concern the collection of experimental results of subitizing within peripheral
 vision.
 
 The website is **meant** to be run on localhost, and will send all appropriate
@@ -16,7 +16,7 @@ With the data that I have, I will be able to
 
 # Technology stack
 
-- Plain old PHP (Django took too long for me to use)
+- Plain old PHP (Django took too long for me to RTFM for)
 
 - Vanilla Javascript
 
@@ -32,4 +32,4 @@ php -S localhost:5000
 
 # Notices
 
-- Note that as this solution is hacked together, you should not test for reaction times under 150ms.
+- As this solution is hacked together, you should not test for reaction times under 150ms.
