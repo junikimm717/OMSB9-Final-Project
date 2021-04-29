@@ -19,3 +19,17 @@ With the data that I have, I will be able to
 - Plain old PHP (Django took too long for me to use)
 
 - Vanilla Javascript
+
+# Running
+
+If you **really** want to run this script, do the following:
+
+```sh
+git clone https://github.com/junikimm717/OMSB9-final-project.git
+cd OMSB9-final-project/website
+php -S localhost:5000
+```
+
+# Notices
+
+- Note that as this solution is hacked together, you should not test for reaction times under 150ms.
