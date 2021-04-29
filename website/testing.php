@@ -43,8 +43,9 @@ function display() {
         </div>
 
         <div class="row">
-        <div class="col-lg-6"> <button onclick="display()"> Conduct Test </button></div>
-        <div class="col-lg-6" id="workspace"> </div>
+        <div class="col-lg-12"> <button onclick="display()"> Conduct Test </button></div>
+        </div>
+        <div class="row" id="workspace" style="text-align:center">
         </div>
 
         <div class="row">
