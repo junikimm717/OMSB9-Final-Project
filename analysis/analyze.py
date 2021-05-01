@@ -6,44 +6,50 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sys import argv
 
+
 def test_1(plot=False) -> None:
     x = np.array([x.correct for x in p.results])
     y = np.array([abs(x.response - x.correct) for x in p.results])
+    means = np.array([np.std([
+        (x.response - x.correct) for x in p.results if x.correct == i
+    ]) for i in range(1, 10)])
     regress = s.linregress(x, y)
 
     if plot:
         slope, intercept, rvalue, pvalue, stderr = regress
-        y_p = intercept + slope*x
+        y_p = intercept + slope * x
         plt.plot(x, y_p, color='green')
         plt.title("Test 1")
         plt.xlabel('Number displayed on screen')
-        plt.ylabel('Deviation from answer')
-        plt.scatter(x, y)
+        plt.ylabel('Standard Deviation from answer')
+        #plt.scatter(x, y)
+        plt.scatter(range(1, 10), means, color='red')
         plt.show()
 
     else:
         print("\n\nresults 1...")
         # anything relating to deviations by number.
         print(regress)
+        print(s.spearmanr(range(1, 10), means))
 
 
 def test_2(plot=False) -> None:
     if plot:
-        def freq(lt: list, el: object) -> int:
+        def freq(ltd: list, el: object) -> int:
             res = 0
-            for x in lt:
+            for x in ltd:
                 if el == x:
                     res += 1
             return res
 
         plt.title("Frequencies of margin of error across reaction times.")
-        data = [[abs(x.response - x.correct) for x in p.results if x.time == i ]
+        data = [[abs(x.response - x.correct) for x in p.results if x.time == i]
                 for i in [250, 500, 750, 1000]]
 
         colors = ['blue', 'green', 'red', 'yellow']
         for i in range(len(data)):
             lt = data[i]
-            time = 250*(i+1)
+            time = 250 * (i + 1)
             f = [freq(lt, j) for j in range(5)]
             plt.scatter(range(5), f, color=colors[i], label=f'Frequencies with {time}ms')
         plt.legend(loc='upper right')
@@ -68,7 +74,6 @@ def test_4() -> None:
     deviations = [[abs(x.response - x.correct) for x in p.results if x.angle == i]
                   for i in [30, 60]]
     print(s.ttest_ind(deviations[0], deviations[1], alternative='less', equal_var=False))
-
 
 
 def main():
