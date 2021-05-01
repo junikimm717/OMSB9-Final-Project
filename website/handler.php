@@ -12,9 +12,13 @@
         <div class="row">
             <div class="col-md-12">
                 <form method="get" action="./testing.php">
-                    <input type="hidden" id="time" name="time" value="<?php echo $_POST["time"]?>"></input>
-                    <input type="hidden" id="id" name="id" value="<?php echo $_POST["id"]?>"></input>
-                    <input type="submit" value="Press to conduct another test."></input>
+                    <input type="submit" value="Press to conduct another test."></input> <br><br>
+                    <label for="time"> Time </label>
+                    <input type="number" id="time" name="time" value="<?php echo $_POST["time"]?>"></input> <br><br>
+                    <label for="id"> Name </label>
+                    <input type="number" id="id" name="id" value="<?php echo $_POST["id"]?>"></input> <br><br>
+                    <label for="angle"> Angle </label>
+                    <input id="angle" name="angle" value="<?php echo $_POST["angle"]?>"></input> <br><br>
                 </form>
             </div>
         </div>

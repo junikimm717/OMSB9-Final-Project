@@ -55,7 +55,7 @@ function display() {
                     <input type="number" name="answer" id="answer"/> <br><br>
 
                     <label for="angle" name="angle"> Enter the angle </label> <br>
-                    <input type="angle" name="angle" id="angle"/> <br><br>
+                    <input type="angle" name="angle" id="angle" value="<?php echo $_GET["angle"]?>"/> <br><br>
                     
                     <!-- metadata about experiment (can be changed) -->
                     <label for="time" name="time"> Reaction Time (leave alone unless changes). </label> <br>
@@ -63,6 +63,7 @@ function display() {
 
                     <input type="hidden" id="id" name="id" value="<?php echo $_GET["id"]?>"></input>
                     <input type="hidden" id="correct" name="correct" value="<?php echo $NUMBER ?>"></input>
+
 
                     <input type="submit" value="Submit"></input>
                 </form>
