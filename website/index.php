@@ -18,6 +18,9 @@
                     <label for="time"> Reaction time </label> <br>
                     <input type="number" id="time" name="time"/> <br> <br>
 
+                    <label for="angle"> Angle </label> <br>
+                    <input id="angle" name="angle"/> <br><br>
+
                     <input type="submit" value="Begin Testing"></input>
                 </form>
             </div>
