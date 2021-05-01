@@ -38,6 +38,6 @@ class Parser:
 files = os.listdir("../data")
 files.remove("README.md")
 files = [os.path.join("../data", x) for x in files]
-results: list[Result] = []
+results = []
 for f in files:
     results += Parser(f).parse()

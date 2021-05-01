@@ -20,6 +20,8 @@ With the data that I have, I will be able to
 
 - Vanilla Javascript
 
+- Python (for data analysis)
+
 # Running
 
 If you **really** want to run this script, do the following:
@@ -29,6 +31,27 @@ git clone https://github.com/junikimm717/OMSB9-final-project.git
 cd OMSB9-final-project/website
 php -S localhost:5000
 ```
+
+# Python Scripts
+
+In order to run the scripts,
+
+```sh
+cd analysis
+./analyze.py (number) (True if you want a graph, only works with certain functions)
+```
+
+## Functions
+
+- 1 - Prints Linear Regression Data (graphs the scatter plot and linear regression)
+
+- 2 - Prints SRCC Test across reaction times. (graphs frequencies of each deviation.)
+
+- 3 - Prints an ANOVA across all of the tested angles of peripheral vision **(no graphing)**
+
+- 4 - Prints a T-test between near and medium peripheral vision (30 and 60
+        degrees) **(no graphing)**
+
 
 # Notices
 
