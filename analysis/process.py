@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 import os
 
+
 @dataclass(order=True)
 class Result:
     angle: int
@@ -11,14 +12,17 @@ class Result:
     correct: int
     name: str
 
+
 def parse(line: str) -> Result:
-    line = line.split();
-    line = [line[2*i+1] for i in range(5)]
-    return Result(time=int(line[0]), name=line[1], response=int(line[2]), 
-            correct=int(line[3]), angle=int(line[4]))
+    line = line.split()
+    line = [line[2 * i + 1] for i in range(5)]
+    return Result(time=int(line[0]), name=line[1], response=int(line[2]),
+                  correct=int(line[3]), angle=int(line[4]))
+
 
 class Parser:
-    lines:list
+    lines: list
+
     def __init__(self, name):
         self.lines = []
         try:
@@ -30,9 +34,10 @@ class Parser:
     def parse(self):
         return [parse(line) for line in self.lines]
 
+
 files = os.listdir("../data")
 files.remove("README.md")
 files = [os.path.join("../data", x) for x in files]
-results = []
+results: list[Result] = []
 for f in files:
     results += Parser(f).parse()
