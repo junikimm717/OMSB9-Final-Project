@@ -16,7 +16,7 @@
                     <label for="time"> Time </label>
                     <input type="number" id="time" name="time" value="<?php echo $_POST["time"]?>"></input> <br><br>
                     <label for="id"> Name </label>
-                    <input type="number" id="id" name="id" value="<?php echo $_POST["id"]?>"></input> <br><br>
+                    <input id="id" name="id" value="<?php echo $_POST["id"]?>"></input> <br><br>
                     <label for="angle"> Angle </label>
                     <input id="angle" name="angle" value="<?php echo $_POST["angle"]?>"></input> <br><br>
                 </form>
