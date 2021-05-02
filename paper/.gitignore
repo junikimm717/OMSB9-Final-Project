@@ -1,0 +1,9 @@
+paper.pdf
+*.docx
+__pycache__
+pythontex-*
+*.pytxcode
+sample.py
+*.aux
+*.log
+*.out
