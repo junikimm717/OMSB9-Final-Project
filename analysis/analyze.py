@@ -22,7 +22,7 @@ def test_1(plot=False) -> None:
         plt.plot(x, y_p, color='green')
         plt.title("Deviations from Answer based on number displayed")
         plt.xlabel('Number Displayed on Screen')
-        plt.ylabel('Standard Deviation From Answer')
+        plt.ylabel('Standard Deviation Of Responses')
         #plt.scatter(x, y)
         plt.scatter(range(1, 10), means, color='red')
         plt.savefig('../paper/images/regression.jpg')
@@ -43,7 +43,7 @@ def test_2(plot=False) -> None:
                     res += 1
             return res
 
-        plt.title("Frequencies of Margin of Error Across Reaction Times")
+        plt.title("Frequencies of Margin of Error Across Flash Time")
         data = [[abs(x.response - x.correct) for x in p.results if x.time == i]
                 for i in [250, 500, 750, 1000]]
 
@@ -54,7 +54,7 @@ def test_2(plot=False) -> None:
             f = [freq(lt, j) for j in range(5)]
             plt.scatter(range(5), f, color=colors[i], label=f'{time}ms')
 
-        plt.xlabel("Amount missed")
+        plt.xlabel("Amount missed(|correct - answered|)")
         plt.ylabel("Frequency")
         plt.legend(loc='upper right')
         plt.savefig('../paper/images/reaction.jpg')
@@ -101,7 +101,7 @@ def test_5(plot=False) -> None:
             f = [freq(lt, j) for j in range(5)]
             plt.scatter(range(5), f, color=colors[i], label=f'{angle} degrees')
 
-        plt.xlabel("Amount missed")
+        plt.xlabel("Amount Missed (|correct - answered|)")
         plt.ylabel("Frequency")
         plt.legend(loc='upper right')
         plt.savefig('../paper/images/angle.jpg')

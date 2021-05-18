@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 
 \usepackage{amsmath}
-\usepackage[margin=1in]{geometry}
+%\usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \graphicspath{{./images/}}
@@ -14,7 +14,8 @@
     #3 %assignment
 }
 
-\title{An Analysis of Visual Subitization Across Different Modes of Peripheral Vision}
+\title{An Analysis of Visual Subitization Across Different Modes of Peripheral
+Vision}
 
 \author{Juni Kim \\
 Stanford Online High School}
@@ -29,19 +30,25 @@ Subitization is the almost instantaneous ability of humans to visually deduce
 the quantity of a certain object (or category) given that the number is small
 enough. For numbers beyond four, humans will instinctually use a system of
 counting and approximation that is less accurate and more time-consuming. When
-one uses this process of subitizing, they are able to count objects with
-minimal effort, as if it were an alternate form of perception. The study that
-I conducted thus tries to test the effect that visual perception has on the
-ability of one to subitize correctly.
+one uses this process of subitizing, they are able to recognize the numerosity
+of objects without counting, as if it were an alternate form of perception.  In
+this study, I examined the human’s fundamental skills in “number sense” by
+testing the effect of visual perception on one’s ability to precisely subitize
+a small group of objects. 
 
 Peripheral vision is the ability of humans to see objects that are not exactly
-on the focus of the eye and are thus allocated less cognitive resources to
-process. Testing the effect of peripheral vision on one's ability to subitize
-would further unveil whether or not visual perception has a significant effect
-on this ability.
+on the focus of the eye. Although central vision within the focus requires most
+of our mental resources, such as memory and attention, and allows us to see
+things with sharp detail, peripheral vision enables us to view objects around
+the entire visual field. Peripheral vision is also a vital component of
+detecting motion and supports functions of the central vision. Vision
+scientists have shown that peripheral vision has relatively poor resolution and
+acuity. Testing the effect of peripheral vision on one’s
+ability to subitize will thus unveil whether or not visual perception has a
+significant effect on subitization.
 
-Within my final project for OMSB9, I collected and analyzed data concerning the
-ability of people to accurately count the number of objects in a drawing along
+Within my final project for OMSB9, I collected and analyzed data to evaluate the
+ability of people to accurately subitize the number of objects in a drawing along
 different angles of peripheral vision and the time in which an image was
 flashed. I intend to find the accuracy of subitizing across different modes of
 peripheral vision and as to the effect that reaction time has on accuracy.
@@ -67,13 +74,13 @@ tests. The source code can be found in
 The testing page is located in the /testing.php file.
 
 Within the testing page, one may modify the GET parameters (which include the
-participant name, angle being tested, and the time being tested) to conduct
-different tests. When one clicks the ``conduct test" button, a randomly selected
-picture (consisting of a certain number of clearly visible dots) will appear
-for a duration of time equal to the one that was put in the GET parameters. The
-participant was asked how many dots they believe (to their best guesses) were
-in the picture that was flashed, and this is recorded. Once this test is
-complete, the ``submit" button is clicked.
+participant name, angle being tested, and the time being tested) to
+conduct different tests. When one clicks the ``conduct test" button, a randomly
+selected picture (consisting of a certain number of clearly visible dots) will
+appear for a duration of time equal to the one that was put in the GET
+parameters. The participant was asked how many dots they believed (to their
+best guesses) were in the picture that was flashed, and their response
+was recorded. Once the test was complete, the ``submit" button was clicked.
 
 \subsubsection{Handler Page}
 The handler is located in the /handler.php file.
@@ -83,16 +90,16 @@ request (so that a particularly adept participant cannot simply scan the GET
 parameters and evaluate their previous answers) and appends this data
 into a file called data.txt (note that the file never gets overwritten).
 
-The handler page also contains a pre-filled HTML form which you may
-modify if you would like to change the settings for the next test.
+The handler page also contains a pre-filled HTML form which I could
+modify if I wanted to change the settings for the next test.
 
 \subsection{Physical Setup}
 A sheet of 11x17 paper was used to make demarcations of 0, 30, and 60 degree
 deviations in order to consistently align the monitor correctly. At the 0
 degree line, an object would be placed (preferably one that is relatively thin)
 for the participant to focus their fovea on while the test is taking place.
-The computer is then placed on one of the lines (for testing a particular
-angle), and the test can be run.
+The computer was then placed on one of the lines (for testing a particular
+angle), and the test was initiated.
 
 
 \begin{figure}
@@ -115,7 +122,7 @@ The data points seen below were all generated with matplotlib.
 \begin{figure} [h]
 \centering
 \includegraphics[scale=0.5]{reaction.jpg}
-\caption{Accuracy across different times}
+\caption{Accuracy across different flash times}
 \end{figure}
 
 \begin{figure} [h]
@@ -127,20 +134,22 @@ The data points seen below were all generated with matplotlib.
 \newpage
 \section{Analysis}
 
-Based on this raw data, I have been able to make some analyses and thus some
-answers to my original questions going into the study.
+Based on the raw data, I have been able to perform some analyses to address my
+research question on the effects of the visual angle and stimulus duration on
+participants’ subitizing performance. 
 
 \subsection{Deviations from answer}
 
-For assessing the standard deviations of responses per answer, a linear
-regression was plausible because there was minimal likelihood that the standard
-deviation of responses would have a non-consistent distribution per response.
+For assessing the standard deviations of participants' responses per answer
+(the actual number of dots displayed), a linear regression was plausible
+because there was minimal likelihood that the standard deviation of responses
+would have a non-consistent distribution per response.
 
 A PMCC test with the correct answer and the standard deviation of responses
 exhibits a p-value of $2.1 \cdot 10^{-5}$ seems to indicate that there exists a
 statistically highly significant positive correlation.
 
-\subsection{Reaction Time and Error}
+\subsection{Accuracy Based on Time Flashed (Figure 3)}
 
 For assessing this correlation, I used a spearman rank correlation coefficient
 (a non-parametric test) in order to assess if there was a significant monotonic
@@ -151,15 +160,25 @@ with the data collected, there is no statistically significant
 monotonic correlation between the time given for the participant to look at the
 image and their precision.
 
-\subsection{Accuracy based on Angle Viewed}
+This result indicates that there was no speed-accuracy trade-off. In other
+words, the participants in this test did not have to slow down their responses
+to be accurate.
+
+\subsection{Accuracy based on Angle Viewed (Figure 4)}
 
 In order to assess whether or not participants were significantly more or less
 accurate on at least one of the three angles at which they were tested, I
-conducted a one-way ANOVA test (as the data is both parametric and has multiple samples).
+conducted a one-way ANOVA test (as the data is both parametric and has multiple
+samples).
 
 The results show that $F=47.5$ and $p = 1.23 \cdot 10^{-18}$, which indicates
-that there is a statistically highly significant difference between the results across
-different angles.
+that there is a statistically highly significant difference between the results
+across different angles.
+
+As an additional note, because the errors for 0 degree (with a peak at around
+$0.0$ in Figure 4) was smaller than those for the 30 and 60 degrees,
+this result suggests that the participants’ subitization performance
+impaired with greater visual angle of the presentation.
 
 \subsection{Near Peripheral Vision vs Far Peripheral Vision?}
 
@@ -171,19 +190,26 @@ there is not a statistically significant difference between precision when
 participants viewed the pictures from $30^{\circ}$ versus $60^{\circ}$.
 
 \section{Conclusions}
-Based on the statistically analyzed data, we have been able to prove that the
-mean precision is different among tests from different angles of peripheral
-vision, but we have been unable to prove such a difference exists between near
-and far peripheral vision. As a benchmark, we have also shown a statistically
+Based on the statistically analyzed data, I have been able to prove that the
+mean precision is different among tests from different angles of vision (3.3).
+However, I have been unable to prove such a difference exists between near and
+far peripheral vision (3.4). As a benchmark, we have also shown a statistically
 significant linear correlation between the amount of error within the
 participants' tests and the number that was displayed in front of them, which
 indicates (as others have previously shown), that the ability of subitization
-decreases with time.
+decreases as one sees more objects that they must count.
 
 As I had constraints of time and accuracy as a result of being within the
 COVID-19 pandemic, I was unable to get a larger set of peripheral vision angles
 to check, which might have allowed me to do a correlation analysis and thus
 gain better insights. Other studies might also be able to obtain more
 volunteers than I have been able to.
+
+There were also constraints from the programs that I used to run the tests. As
+I used browser javascript to flash the images, there were rendering issues
+within the browser once I set the flash time to below 150ms. It is possible
+that using a faster GUI program written in a faster environment would have
+allowed me to more closely examine the correlations between flash time and
+subitization ability.
 
 \end{document}
