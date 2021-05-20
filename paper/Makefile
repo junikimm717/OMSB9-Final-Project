@@ -6,6 +6,8 @@ paper.pdf:
 	pdflatex -interaction=nonstopmode paper.tex
 	./build.sh ./paper.tex
 	pdflatex -interaction=nonstopmode paper.tex
+	biber paper
+	pdflatex paper.tex
 
 images:
 	../analysis/analyze.py 1 True

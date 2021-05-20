@@ -1,4 +1,6 @@
-paper.pdf
+paper.*
+!paper.tex
+!paper.bib
 *.docx
 __pycache__
 pythontex-*

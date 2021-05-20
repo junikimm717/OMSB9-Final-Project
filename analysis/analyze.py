@@ -95,17 +95,18 @@ def test_5(plot=False) -> None:
                 for i in [0, 30, 60]]
 
         colors = ['blue', 'green', 'red', 'yellow']
+        labels = ['central vision', 'near peripheral vision', 'far peripheral vision']
         for i in range(len(data)):
             lt = data[i]
             angle = 30*i
             f = [freq(lt, j) for j in range(5)]
-            plt.scatter(range(5), f, color=colors[i], label=f'{angle} degrees')
+            plt.scatter(range(5), f, color=colors[i], label=f'{angle} degrees ({labels[i]})')
 
         plt.xlabel("Amount Missed (|correct - answered|)")
         plt.ylabel("Frequency")
         plt.legend(loc='upper right')
         plt.savefig('../paper/images/angle.jpg')
-        #plt.show()
+        plt.show()
 
     else:
         pass

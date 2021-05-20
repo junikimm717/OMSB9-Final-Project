@@ -1,9 +1,11 @@
 \documentclass[12pt]{article}
 
 \usepackage{amsmath}
-%\usepackage[margin=1in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{paper.bib}
 \graphicspath{{./images/}}
 \linespread{2}
 
@@ -27,39 +29,41 @@ Stanford Online High School}
 \maketitle
 
 Subitization is the almost instantaneous ability of humans to visually deduce
-the quantity of a certain object (or category) given that the number is small
-enough. For numbers beyond four, humans will instinctually use a system of
-counting and approximation that is less accurate and more time-consuming. When
-one uses this process of subitizing, they are able to recognize the numerosity
-of objects without counting, as if it were an alternate form of perception.  In
-this study, I examined the human’s fundamental skills in “number sense” by
-testing the effect of visual perception on one’s ability to precisely subitize
-a small group of objects. 
+the quantity of a group or category of objects given that the number is small
+enough. For numbers beyond four, humans will instinctually use either a
+system of approximation that is less accurate or an effortful, time-consuming
+counting strategy. When one uses this process of subitizing, they are able to
+recognize the numerosity of objects without counting, as if it were an
+alternate form of perception.  In this study, I examined the human’s
+fundamental skills in “number sense” by testing the effect of visual perception
+on one’s ability to precisely subitize a small group of objects. 
 
-Peripheral vision is the ability of humans to see objects that are not exactly
-on the focus of the eye. Although central vision within the focus requires most
-of our mental resources, such as memory and attention, and allows us to see
-things with sharp detail, peripheral vision enables us to view objects around
-the entire visual field. Peripheral vision is also a vital component of
-detecting motion and supports functions of the central vision. Vision
+Peripheral vision is the ability of humans to see objects that are outside the
+focus of the eye. Although central vision within the focus requires most of our
+mental resources, such as memory and attention, and allows us to see things
+with sharp detail, peripheral vision enables us to view objects around the
+entire visual field. Peripheral vision is also a vital component of detecting
+motions and changes and supports functions of the central vision. Vision
 scientists have shown that peripheral vision has relatively poor resolution and
-acuity. Testing the effect of peripheral vision on one’s
-ability to subitize will thus unveil whether or not visual perception has a
-significant effect on subitization.
+acuity compared to central vision. Testing one’s ability to subitize the number
+of objects presented to the peripheral vision compared to central vision will
+thus unveil whether or not visual resolution has a significant effect on
+subitization ability.
 
-Within my final project for OMSB9, I collected and analyzed data to evaluate the
-ability of people to accurately subitize the number of objects in a drawing along
-different angles of peripheral vision and the time in which an image was
-flashed. I intend to find the accuracy of subitizing across different modes of
-peripheral vision and as to the effect that reaction time has on accuracy.
+In my final project for OMSB9, I collected and analyzed data to evaluate the
+ability of people to accurately subitize the number of objects in a drawing
+along different angles of vision and the time in which an image was presented.
+I intend to find the accuracy of subitizing across different modes of
+peripheral vision and effects of the presentation duration on participants'
+performance.
 
 \section{Methodology}
 
 \subsection{Samples}
 A sample of 5 people was used in this experiment (due to the lack of reachable
-people as a result of COVID-19). I conducted tests on 4 different times (250ms,
+people as a result of COVID-19). I conducted tests on 4 different durations (250ms,
 500ms, 750ms, and 1000ms) and 3 different angles relative to straight ahead
-($0^{\circ}$, $30^{\circ}$, $60^{\circ}$), leading to a net 12 different
+($0^{\circ}$ for central presentation and $30^{\circ}$ and $60^{\circ}$ for near and far-peripheral presentation, respectively), leading to a net 12 different
 variations on the test to perform. Each of these variations was done five times
 per participant.
 
@@ -68,7 +72,7 @@ per participant.
 In order to make the testing procedure more efficient, I wrote a set of PHP
 scripts that could be run in a localhost setting and allow me to both run and record the
 tests. The source code can be found in
-\url{https://github.com/junikimm717/OMSB9-Final-Project/tree/main/website}.
+\href{https://github.com/junikimm717/OMSB9-Final-Project}{this link}.
 
 \subsubsection{Testing Page}
 The testing page is located in the /testing.php file.
@@ -95,11 +99,11 @@ modify if I wanted to change the settings for the next test.
 
 \subsection{Physical Setup}
 A sheet of 11x17 paper was used to make demarcations of 0, 30, and 60 degree
-deviations in order to consistently align the monitor correctly. At the 0
-degree line, an object would be placed (preferably one that is relatively thin)
-for the participant to focus their fovea on while the test is taking place.
-The computer was then placed on one of the lines (for testing a particular
-angle), and the test was initiated.
+deviations from the center of the screen in order to consistently align the
+monitor correctly. At the 0 degree line, an object would be placed (preferably
+one that is relatively thin) for the participant to focus their fovea
+on while the test is taking place.  The computer was then placed on one of the
+lines (for testing a particular angle), and the test was initiated.
 
 
 \begin{figure}
@@ -113,21 +117,21 @@ The raw (unprocessed) data can be found at \\
 \url{https://github.com/junikimm717/OMSB9-Final-Project/tree/main/data/data.txt}
 The data points seen below were all generated with matplotlib.
 
-\begin{figure} [h]
+\begin{figure} [p]
 \centering
-\includegraphics[scale=0.5]{regression.jpg}
+\includegraphics[scale=0.4]{regression.jpg}
 \caption{Standard Deviation of Responses}
 \end{figure}
 
-\begin{figure} [h]
+\begin{figure} [p]
 \centering
-\includegraphics[scale=0.5]{reaction.jpg}
+\includegraphics[scale=0.4]{reaction.jpg}
 \caption{Accuracy across different flash times}
 \end{figure}
 
-\begin{figure} [h]
+\begin{figure} [p]
 \centering
-\includegraphics[scale=0.5]{angle.jpg}
+\includegraphics[scale=0.4]{angle.jpg}
 \caption{Accuracy across different angles}
 \end{figure}
 
@@ -145,31 +149,35 @@ For assessing the standard deviations of participants' responses per answer
 because there was minimal likelihood that the standard deviation of responses
 would have a non-consistent distribution per response.
 
-A PMCC test with the correct answer and the standard deviation of responses
-exhibits a p-value of $2.1 \cdot 10^{-5}$ seems to indicate that there exists a
-statistically highly significant positive correlation.
+In addition, previously cognitive psychologists have found that estimation
+variability grows proportionally to the number of items displayed (\cite{prop})
+
+A product moment correlation test assessing the correlation between the correct
+answer and the standard deviation of responses exhibits a p-value of $2.1 \cdot
+10^{-5}$ seems to indicate that there exists a statistically highly significant
+positive correlation.
 
 \subsection{Accuracy Based on Time Flashed (Figure 3)}
 
-For assessing this correlation, I used a spearman rank correlation coefficient
+For assessing this correlation, I used a Spearman rank correlation coefficient
 (a non-parametric test) in order to assess if there was a significant monotonic
-correlation between precision of the participant and the average reaction time.
+correlation between precision of the participant and the average flash time.
 
-The SRCC was equal to 0.027 and the p-value was 0.638, which indicates that,
-with the data collected, there is no statistically significant
-monotonic correlation between the time given for the participant to look at the
-image and their precision.
+The Spearman rank test statistic was equal to 0.027 and the p-value was 0.638,
+which indicates that, with the data collected, there is no statistically
+significant monotonic correlation between the time given for the
+participant to look at the image and their precision.
 
-This result indicates that there was no speed-accuracy trade-off. In other
-words, the participants in this test did not have to slow down their responses
-to be accurate.
+This result indicates that participants’ subitizing accuracy was not affected
+by the different presentation durations in this experiment. Thus, the shortest
+duration (250 msec) appeared to be sufficient for subitization to be as
+accurate as in the longest duration (1000 msec).
 
 \subsection{Accuracy based on Angle Viewed (Figure 4)}
 
-In order to assess whether or not participants were significantly more or less
-accurate on at least one of the three angles at which they were tested, I
-conducted a one-way ANOVA test (as the data is both parametric and has multiple
-samples).
+In order to assess whether or not participants were significantly accurate on
+at least one of the three angles at which they were tested, I conducted
+a one-way ANOVA test (as the data is both parametric and has multiple samples).
 
 The results show that $F=47.5$ and $p = 1.23 \cdot 10^{-18}$, which indicates
 that there is a statistically highly significant difference between the results
@@ -186,18 +194,19 @@ In order to test whether or not near peripheral vision yielded a statistically
 significantly better precision, I used a two-sample t-test.
 
 The results indicated that $T = -1.707$ and $p = 0.121$, which indicates that
-there is not a statistically significant difference between precision when
+there was no statistically significant difference between precision when
 participants viewed the pictures from $30^{\circ}$ versus $60^{\circ}$.
 
 \section{Conclusions}
-Based on the statistically analyzed data, I have been able to prove that the
-mean precision is different among tests from different angles of vision (3.3).
-However, I have been unable to prove such a difference exists between near and
-far peripheral vision (3.4). As a benchmark, we have also shown a statistically
-significant linear correlation between the amount of error within the
-participants' tests and the number that was displayed in front of them, which
-indicates (as others have previously shown), that the ability of subitization
-decreases as one sees more objects that they must count.
+Based on the data collected and statistically analyzed in this study, I have
+been able to prove that the mean precision is different among tests from
+different angles of vision (Section 3.3).  However, I have been unable to prove
+such a difference exists between near and far peripheral vision (Section 3.4).
+As a benchmark, we have also shown a statistically significant linear
+correlation between the amount of error within the participants' tests and the
+number that was displayed in front of them, which indicates (as others have
+previously shown), that the ability of subitization decreases as one
+sees more objects that they must perceive.
 
 As I had constraints of time and accuracy as a result of being within the
 COVID-19 pandemic, I was unable to get a larger set of peripheral vision angles
@@ -211,5 +220,7 @@ within the browser once I set the flash time to below 150ms. It is possible
 that using a faster GUI program written in a faster environment would have
 allowed me to more closely examine the correlations between flash time and
 subitization ability.
+
+\printbibliography
 
 \end{document}
