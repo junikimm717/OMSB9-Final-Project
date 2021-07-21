@@ -3,9 +3,7 @@
 
 paper.pdf:
 	rm -rf ./pythontex-files-paper
-	pdflatex -interaction=nonstopmode paper.tex
-	./build.sh ./paper.tex
-	pdflatex -interaction=nonstopmode paper.tex
+	pdflatex paper.tex
 	biber paper
 	pdflatex paper.tex
 
